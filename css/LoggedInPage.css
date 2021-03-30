@@ -1,0 +1,42 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	background-image: url("../img/pixel1.png");
+	background-position: absolute;
+	background-size: cover;
+	background-repeat: no-repeat;
+	font-family: "Poppins", sans-serif;
+	margin-left: 100px;
+	margin-top: 20px;
+}
+.container ul{
+	list-style: none;
+		font-size: 10px;
+}
+.container ul li {
+	width: 200px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	float: left;
+	color: white;
+	font-size: 17px;
+}
+.container ul li:hover{
+	background-color: #546de5;
+}
+.container ul ul{
+	display: none;
+}
+.container ul li:hover > ul{
+	display: block;
+}
+.container ul li a{
+	text-decoration: none;
+	color: white;
+}
+.container li ul li{
+	width:200px;
+}
