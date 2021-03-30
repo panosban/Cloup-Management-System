@@ -31,6 +31,7 @@ session_start();
                 <th style=white-space:nowrap">ID</th>
                 <th>Diploma</th>
                 <th>Grade</th>
+                <th>Graduation Date</th>
 
               
                 <th style="width: 250px">Actions</th>
@@ -42,12 +43,13 @@ session_start();
                 <?php
                 $DB = new Database();
                 $DB->connect();
-                $res = $DB->execute("SELECT kwd_ptyxio, per_ptyxiou, vathmos "
+                $res = $DB->execute("SELECT kwd_ptyxio, per_ptyxiou, vathmos, "
                         . "date_apokthshs FROM ekpaideysh WHERE kwd_ptyxio !=0", []);
                 while ($row = $res->fetch()) {
                    
                     echo "<td>" . $row['kwd_ptyxio'] . "</td>";
                     echo "<td>" . $row['per_ptyxiou'] . "</td>";
+                    echo "<td>" . $row['vathmos'] . "</td>";
                     echo "<td>" . $row['date_apokthshs'] . "</td>";
                     
                     ?>
@@ -58,13 +60,14 @@ session_start();
                             <button type="submit" title="View" style="width:120px; background-color:blue;" class="btn-large">
                                 <i>View</i></button>
                         </form>
-                        
+                        <?php
+                        if ($_SESSION['user_type_ergazom']==1) { ?>
                         <form style ="float: left; padding: 2px; width: 160px; height: 50px;" method="post" action="../../Functions/Ptyxia/EditPtyxio.php" target="_blank">
                             <input style=" display:none ;color: red; width: 0px; height: 0px;" 
                                    type="text" name="editptyxioid" value="<?php echo $row['kwd_ptyxio'];?>" readonly>
                             <button type="submit" title="Edit" style="width:120px; background-color:green;" class="btn-large">
                                 <i>Edit</i></button>
-                        </form>
+                        </form> <?php } ?>
                         
                         <?php
                         if ($_SESSION['user_type_ergazom']==1) { ?>

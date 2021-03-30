@@ -58,12 +58,14 @@ session_start();
                                 <i>View</i></button>
                         </form>
                         
+                        <?php
+                        if ($_SESSION['user_type_ergazom']==1) { ?>
                         <form style ="float: left; padding: 2px; width: 160px; height: 50px;" method="post" action="../../Functions/Erga/EditErgo.php" target="_blank">
                             <input style=" display:none ;color: red; width: 0px; height: 0px;" 
                                    type="text" name="editergoid" value="<?php echo $row['kwd_ergou'];?>" readonly>
                             <button type="submit" title="Edit" style="width:120px;background-color:green;" class="btn-large">
                                 <i>Edit</i></button>
-                        </form>
+                        </form> <?php } ?>
                         
                         <?php
                         if ($_SESSION['user_type_ergazom']==1) { ?>

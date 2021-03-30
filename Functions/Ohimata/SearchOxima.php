@@ -152,18 +152,15 @@ else {
                             <button type="submit" title="View" style="width:120px; height:40px; background-color:blue;" class="btn-large">
                                 <i>View</i></button>
                         </form>
-                            
+                            <?php
+                        if ($_SESSION['user_type_ergazom']==1) { ?>
                             <form style ="float: left; padding: 2px; width: 160px; height: 60px;" method="post" action="../../Functions/Ohimata/EditOxima.php" target="_blank">
                             <input style=" display:none ;color: red;  width: 0px; height: 0px;" 
                                    type="text" name="editoximaid" value="<?php echo $OximaSearch->ar_kykloforias; ?>" readonly>
                             <button type="submit" title="Edit" style="width:120px; height:40px; background-color:green" class="btn-large">
                                 <i>Edit</i></button>
-                        </form>
-                            
-                            
-                            
-                            
-                            
+                        </form> <?php } ?>
+                                  
                         <?php
                         if ($_SESSION['user_type_ergazom']==1) { ?>
                             <form style ="float: left; padding: 2px; width: 160px; height: 60px;" method="post" action="../../Functions/Ohimata/DeleteOxima.php" target="_blank">

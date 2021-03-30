@@ -54,13 +54,14 @@ session_start();
                             <button type="submit" title="View" style="width:120px;background-color:blue;" class="btn-large">
                                 <i>View</i></button>
                         </form>
-                        
+                        <?php
+                        if ($_SESSION['user_type_ergazom']==1) { ?>                        
                         <form style ="float: left; padding: 2px; width: 160px; height: 50px;" method="post" action="../../Functions/Tmhma/EditTmhma.php" target="_blank">
                             <input style=" display:none ;color: red; width: 0px; height: 0px;" 
                                    type="text" name="edittmhmaid" value="<?php echo $row['kwd_tmhmatos'];?>" readonly>
                             <button type="submit" title="Edit" style="width:120px;background-color:green;" class="btn-large">
                                 <i>Edit</i></button>
-                        </form>
+                        </form> <?php } ?>  
                         <?php
                         if ($_SESSION['user_type_ergazom']==1) { ?>
                             <form style ="float: left; padding: 2px; width: 160px; height: 50px;" method="post" action="../../Functions/Erga/DeleteErgo.php" target="_blank">
